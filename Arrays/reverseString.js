@@ -18,4 +18,15 @@ const reverse = (str) => {
   return newString;
 };
 
+//More readable version:
+const reverse2 = (str) => {
+  return str.split('').reverse().join('');
+}
+
+//More succinct version:
+const reverse3 = str => [...str].reverse().join('');
+
+
 console.log(reverse("Hi My name is Jenny"));
+console.log(reverse2("Hi My name is Jenny"));
+console.log(reverse3("Hi My name is Jenny"));
