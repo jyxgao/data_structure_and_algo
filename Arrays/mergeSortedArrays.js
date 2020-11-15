@@ -10,25 +10,25 @@ const mergeSortedArrays = (array1, array2) => {
   let j = 1;
 
   // Check input
-  if (!array1Item) {
+  if (array1.length === 0) {
     return array2;
   }
-  if (!array2Item) {
+  if (array2.length === 0) {
     return array1;
   }
   
-  // while (array1Item || array2Item) {
-  //   console.log(array1Item, array2Item)
-  //   if (array1Item < array2Item) {
-  //     mergedArray.push(array1Item)
-  //     array1Item = array1[i];
-  //     i++;
-  //   } else {
-  //     mergedArray.push(array2Item);
-  //     array2Item = array2[j];
-  //     j++;
-  //   }
-  // }
+  while (array1Item || array2Item) {
+    // if array2Item is empty or array1Item is smaller, push the array1Item
+    if (!array2Item || array1Item < array2Item) {
+      mergedArray.push(array1Item)
+      array1Item = array1[i];
+      i++;
+    } else {
+      mergedArray.push(array2Item);
+      array2Item = array2[j];
+      j++;
+    }
+  }
 
   return mergedArray;
 }
