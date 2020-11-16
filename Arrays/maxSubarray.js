@@ -28,17 +28,16 @@
 // -231 <= nums[i] <= 231 - 1
 
 const maxSubarray = (array) => {
-  let maxSum;
-  let currentMax = array[0]
+  let max1 = array[0];
+  let max2 = array[0];
 
   for (let i = 1; i < array.length; i++ ) {
-    if (currentMax + array[i] >= currentMax) {
-      currentMax += array[i];
-
-    } else {
-      
+    max1 = Math.max(array[i], max1 + array[i])
+    if (max1 > max2) {
+      max2 = max1;
     }
-  }  
+  }
+  return max2;
 }
 
 console.log(maxSubarray([-2,1,-3,4,-1,2,1,-5,4]));
